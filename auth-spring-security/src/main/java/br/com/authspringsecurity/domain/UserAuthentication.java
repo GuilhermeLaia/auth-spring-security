@@ -9,6 +9,8 @@ import br.com.authspringsecurity.entity.User;
 
 public class UserAuthentication implements Authentication{
 
+	private static final long serialVersionUID = -1549009134214042129L;
+	
 	private final User user;
 	private boolean authenticated = true;
 
