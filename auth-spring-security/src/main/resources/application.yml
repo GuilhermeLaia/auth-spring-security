@@ -2,39 +2,37 @@ spring:
    application.name: AUTH SECURITY
    profiles.active: dev
    
-   security.basic.enabled=false
-   token.secret=9SyECk96oDsTmXfogIieDI0cD/8FpnojlYSUJT5U9I/FGVmBz5oskmjOR8cbXTvoPjX+Pq/T/b1PqpHX0lYm0oCBjXWICA==
-   
 server:
    port: 8080
    session-timeout: 0
+
+security.basic.enable: false
+token.secret: 9SyECk96oDsTmXfogIieDI0cD/8FpnojlYSUJT5U9I/FGVmBz5oskmjOR8cbXTvoPjX+Pq/T/b1PqpHX0lYm0oCBjXWICA==
 
 ---
 spring:
   profiles: dev
 
+ds:
 
-         datasource:
-
-            driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-            showSql: false
-            formatSql: false
-            database: SQLSERVER
-            url: jdbc:sqlserver://10.13.2.183:1433;databaseName=NEXTHMG
-            username: next
-            password: next@123
+        driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        showSql: false
+        formatSql: false
+        database: SQLSERVER
+        url: jdbc:sqlserver://localhost:1433;databaseName=Teste
+        username: teste
+        password: teste@123
 
 ---
 spring:
   profiles: prod
-  
-  
-         datasource:
 
-            driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-            showSql: false
-            formatSql: false
-            database: SQLSERVER
-            url: jdbc:sqlserver://10.161.69.141:1433;databaseName=NEXT
-            username: field
-            password: field_st3f5n1n1
+ds:
+
+        driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        showSql: false
+        formatSql: false
+        database: SQLSERVER
+        url: jdbc:sqlserver://localhost:1433;databaseName=Teste
+        username: teste
+        password: teste@123

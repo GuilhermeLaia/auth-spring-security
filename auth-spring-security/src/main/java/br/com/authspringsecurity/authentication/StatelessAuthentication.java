@@ -2,19 +2,12 @@ package br.com.authspringsecurity.authentication;
 
 import javax.servlet.Filter;
 
-import org.springframework.beans.factory.InitializingBean;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.filter.CharacterEncodingFilter;
-
-import br.com.authspringsecurity.entity.User;
-import br.com.authspringsecurity.enumeration.UserRole;
-import br.com.authspringsecurity.repository.UserRepository;
 
 @SpringBootApplication
 @ComponentScan
@@ -25,7 +18,7 @@ public class StatelessAuthentication {
 		SpringApplication.run(StatelessAuthentication.class, args);
 	}
 	
-	@Bean
+	/*@Bean
 	public InitializingBean insertDefaultUsers() {
 		return new InitializingBean() {
 			
@@ -46,7 +39,7 @@ public class StatelessAuthentication {
 				userRepository.save(user);
 			}
 		};
-	}
+	}*/
 
 	@Bean
 	public Filter characterEncodingFilter() {

@@ -122,7 +122,7 @@ public class User implements UserDetails, Serializable {
 	}
 
 	// Use Roles as external API
-	public Set<UserRole> getRoles() {
+	/*public Set<UserRole> getRoles() {
 		Set<UserRole> roles = EnumSet.noneOf(UserRole.class);
 		if (authorities != null) {
 			for (UserAuthority authority : authorities) {
@@ -153,7 +153,7 @@ public class User implements UserDetails, Serializable {
 
 	public boolean hasRole(UserRole role) {
 		return authorities.contains(role.asAuthorityFor(this));
-	}
+	}*/
 
 	@Override
 	@JsonIgnore
