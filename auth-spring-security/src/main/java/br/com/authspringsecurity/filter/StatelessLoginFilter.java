@@ -60,4 +60,6 @@ public class StatelessLoginFilter extends AbstractAuthenticationProcessingFilter
 		// Add the authentication to the Security context
 		SecurityContextHolder.getContext().setAuthentication(userAuthentication);
 	}
+	
+
 }

@@ -5,8 +5,11 @@ spring:
 server:
    port: 8080
    session-timeout: 0
+   
+security:
+    basic:
+        enabled: false
 
-security.basic.enable: false
 token.secret: 9SyECk96oDsTmXfogIieDI0cD/8FpnojlYSUJT5U9I/FGVmBz5oskmjOR8cbXTvoPjX+Pq/T/b1PqpHX0lYm0oCBjXWICA==
 
 ---

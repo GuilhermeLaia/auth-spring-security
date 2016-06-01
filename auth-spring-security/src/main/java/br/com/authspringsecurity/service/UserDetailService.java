@@ -1,6 +1,5 @@
 package br.com.authspringsecurity.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AccountStatusUserDetailsChecker;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -9,16 +8,15 @@ import org.springframework.stereotype.Service;
 
 import br.com.authspringsecurity.entity.User;
 import br.com.authspringsecurity.enumeration.UserRole;
-import br.com.authspringsecurity.repository.UserRepository;
 
 @Service
 public class UserDetailService implements UserDetailsService {
 	
 	public static final String USER_NAME_TEST = "user_name";
-	public static final String PASSWORD_TEST = "123";
+	public static final String PASSWORD_TEST = "12345";
 
-	@Autowired
-	private UserRepository userRepository;
+	/*@Autowired
+	private UserRepository userRepository;*/
 	
 	private final AccountStatusUserDetailsChecker detailsChecker = new AccountStatusUserDetailsChecker();
 	
@@ -38,7 +36,7 @@ public class UserDetailService implements UserDetailsService {
 			User user = new User();
 			user.setUsername(username);
 			user.setPassword(new BCryptPasswordEncoder().encode(PASSWORD_TEST));
-			//user.grantRole(UserRole.ADMIN);
+			user.grantRole(UserRole.ADMIN);
 			return user;
 		}
 		return null;

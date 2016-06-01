@@ -3,15 +3,17 @@ package br.com.authspringsecurity.authentication;
 import javax.servlet.Filter;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
-@SpringBootApplication
-@ComponentScan
+@EnableAutoConfiguration
 @Configuration
+@ComponentScan(basePackages = {"br.com.authspringsecurity"})
+@EnableScheduling
 public class StatelessAuthentication {
 
 	public static void main(String[] args) {
